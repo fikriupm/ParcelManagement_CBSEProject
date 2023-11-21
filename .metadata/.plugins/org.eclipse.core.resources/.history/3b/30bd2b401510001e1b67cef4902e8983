@@ -1,0 +1,108 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html>
+<head>
+<title>Parcel Management System</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<style>
+body {
+	background-image: url("images/bg1.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-color: #f8f9fa;
+}
+
+.navbar {
+	background-color: #343a40;
+}
+
+.navbar-brand {
+	font-weight: bold;
+}
+
+    .btn-custom {
+        background-color: #ff0000; /* Replace with your desired button color */
+        color: #ffffff; /* Replace with your desired text color */
+        border-color: #ff0000; /* Replace with your desired border color */
+    }
+
+    .btn-custom:hover {
+        background-color: #cc0000; /* Replace with your desired button hover color */
+        border-color: #cc0000; /* Replace with your desired border hover color */
+    }
+}
+</style>
+</head>
+<body>
+
+	<header>
+		<nav class="navbar navbar-expand-sm bg-danger navbar-dark sticky-top">
+			<div>
+				<a href="dashboard.jsp" class="navbar-brand"> Parcel Management
+					System </a>
+			</div>
+
+			<ul class="navbar-nav">
+				<li><a href="<%=request.getContextPath()%>/list"
+					class="nav-link">Parcel</a></li>
+			</ul>
+			<ul class="navbar-nav">
+				<li><a href="<%=request.getContextPath()%>/available"
+					class="nav-link">Available</a></li>
+			</ul>
+		</nav>
+	</header>
+	<br>
+	<div class="container col-md-5">
+		<div class="card">
+			<div class="card-body">
+				<c:if test="${parcel != null}">
+					<form action="update" method="post">
+				</c:if>
+				<c:if test="${parcel == null}">
+					<form action="insert" method="post">
+				</c:if>
+
+				<caption>
+					<h2>
+						<c:if test="${parcel != null}">
+            			Edit Parcel
+            		</c:if>
+						<c:if test="${parcel == null}">
+            			Add New Parcel
+            		</c:if>
+					</h2>
+				</caption>
+
+				<c:if test="${parcel != null}">
+					<input type="hidden" name="id"
+						value="<c:out value='${parcel.id}' />" />
+				</c:if>
+
+				<fieldset class="form-group">
+					<label>Name</label> <input type="text"
+						value="<c:out value='${parcel.name}' />" class="form-control"
+						name="name" required="required">
+				</fieldset>
+
+				<fieldset class="form-group">
+					<label>Phone Number</label> <input type="text"
+						value="<c:out value='${parcel.noPhone}' />" class="form-control"
+						name="noPhone" required="required">
+				</fieldset>
+
+
+				<button type="submit" class="btn btn-default btn-block btn-lg">Save
+				</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+1686618415615	Move 'index.jsp' to 'webapp'
+1686618422719	Move 'login.jsp' to 'webapp'
+1686618427662	Move 'registration.jsp' to 'webapp'
+1686618903692	Delete element
+1686642318022	Move 'assets' to 'webapp'
+1686642327337	Move 'css' to 'webapp'
+1686642331542	Move 'fonts' to 'webapp'
+1686642335525	Move 'images' to 'webapp'
+1686642339481	Move 'js' to 'webapp'
+1686642343652	Move 'lib' to 'webapp'
+1686642347788	Move 'scss' to 'webapp'
+1686667160743	Move 'lib' to 'WEB-INF'
+1686759673625	Copy file
+1686880997572	Delete element
+1686881085508	Delete element
+1686903975873	Delete element
+1686905553381	Move compilation unit
+1686905565791	Move compilation unit
+1686905572244	Move compilation unit
